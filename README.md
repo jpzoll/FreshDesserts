@@ -20,3 +20,6 @@ FreshDessert is a SwiftUI-based iOS app that displays a list of delicious desser
 ```bash
 git clone [https://github.com/yourusername/FreshDessert.git](https://github.com/jpzoll/FreshDesserts.git)https://github.com/jpzoll/FreshDesserts.git
 cd FreshDessert
+```
+
+2. Open Solution in Xcode and you're all set!

@@ -15,11 +15,11 @@ FreshDessert is a SwiftUI-based iOS app that displays a list of delicious desser
 
 ## Setup
 
-1. Clone the repository:
+1. Either download the Zip file for this repository, or you can clone it at:
 
 ```bash
 git clone [https://github.com/yourusername/FreshDessert.git](https://github.com/jpzoll/FreshDesserts.git)https://github.com/jpzoll/FreshDesserts.git
 cd FreshDessert
 ```
 
-2. Open Solution in Xcode and you're all set!
+2. Once you have the repo unzipped and on your local machine, open the solution in Xcode and you're all set!

@@ -1,4 +1,4 @@
-# FreshDessert
+# 🍧 FreshDessert
 ## A one stop shop for all your favorite delicious desserts - right at your fingertips!
 
 <div align="center">

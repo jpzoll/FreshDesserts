@@ -6,5 +6,5 @@ FreshDessert is a SwiftUI-based iOS app that displays a list of delicious desser
 ## Features
 
 - SwiftUI 
-- Integration with a [TheMealDB](https://themealdb.com) API for real data
+- Integration with a [TheMealDB API](https://themealdb.com) for real data
 - Navigation to detailed dessert view

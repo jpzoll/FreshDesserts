@@ -2,7 +2,7 @@
 //  DessertDetailView.swift
 //  FreshDesserts
 //
-//  Created by htetkaungkyaw on 10/11/2023.
+//  Created by jpzoll on 10/11/2023.
 //
 
 import SwiftUI
@@ -13,31 +13,71 @@ struct DessertDetailView: View {
     var dessert: Dessert
 
     var body: some View {
-        VStack {
-            // Display detailed information here using detailedDessert
-            Text("Meal Name: \(detailedDessert?.strMeal ?? "")")
-            Text("Instructions: \(detailedDessert?.strInstructions ?? "")")
-            //Text("Ingredients: \(detailedDessert?.ingredients.joined(separator: ", ") ?? "")")
-        }
-        .onAppear {
-            Task {
-                do {
-                    detailedDessert = try await JsonDessertService().getDessertDetails(for: dessert)
-                } catch {
-                    print("Error fetching details: \(error.localizedDescription)")
+        ScrollView {
+            VStack {
+            // 🌄 Header Section
+                VStack {
+                    AsyncImage(url: URL(string: detailedDessert?.strMealThumb ?? "")) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .transition(.push(from: .top))
+                                .padding()
+                        } else if phase.error != nil {
+                            Text("[Insert Image Here]")
+                        }
+                    }
+                    .scaledToFit()
+                    
+                    Divider()
+                    
+            // 🍨 Dessert Name Section
+                    if let dessertName = detailedDessert?.strMeal {
+                        Text("\(dessertName)")
+                            .font(.largeTitle.bold())
+                    }
+                    
+                    Divider()
+                    
+            // 📜 Instructions Section
+                    VStack(alignment: .leading) {
+                        if let dessertInstructions = detailedDessert?.strInstructions {
+                            VStack(alignment: .leading) {
+                                Text("Instructions")
+                                    .font(.title2.bold().italic())
+                                Text("\(dessertInstructions)")
+                            }
+                        }
+                        Divider()
+                        
+            // 🥄 Ingredients Section
+                        if let detailedDessert = detailedDessert {
+                            VStack(alignment: .leading) {
+                                Text("Ingredients")
+                                    .font(.title2.bold().italic())
+                                ForEach(detailedDessert.ingredientMeasurements, id: \.self) { ingredient in
+                                    HStack {
+                                        Image(systemName: "circle.fill")
+                                        Text(ingredient)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
                 }
+                .animation(.easeOut(duration: 1))
+                
+            // 📝 Additional Text Section
             }
         }
-    }
-
-    func fetchDetails(for dessert: Dessert) async throws -> Dessert {
-        guard let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(dessert.idMeal)") else {
-            throw URLError(.badURL)
+        .onAppear {
+            // 🔄 Loading up Desert from API Endpoint
+            Task {
+                detailedDessert = try await JSONDessertService().getDessertDetails(for: dessert)
+            }
         }
-
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let decoded = try JSONDecoder().decode(Response.self, from: data)
-        return decoded.meals.first ?? dessert
     }
 }
 

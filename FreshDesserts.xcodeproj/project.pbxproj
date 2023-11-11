@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7738BB672AFEE8E10009218E /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738BB662AFEE8E10009218E /* Dessert.swift */; };
 		7738BB692AFEEA920009218E /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738BB682AFEEA920009218E /* DessertDetailView.swift */; };
-		7738BB6D2AFEEB650009218E /* JsonDessertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738BB6C2AFEEB650009218E /* JsonDessertService.swift */; };
+		7738BB6D2AFEEB650009218E /* JSONDessertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738BB6C2AFEEB650009218E /* JSONDessertService.swift */; };
 		77F169F92AFEE852003D9855 /* FreshDessertsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F169F82AFEE852003D9855 /* FreshDessertsApp.swift */; };
 		77F169FB2AFEE852003D9855 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F169FA2AFEE852003D9855 /* ContentView.swift */; };
 		77F169FD2AFEE854003D9855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F169FC2AFEE854003D9855 /* Assets.xcassets */; };
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		7738BB662AFEE8E10009218E /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 		7738BB682AFEEA920009218E /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
-		7738BB6C2AFEEB650009218E /* JsonDessertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDessertService.swift; sourceTree = "<group>"; };
+		7738BB6C2AFEEB650009218E /* JSONDessertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDessertService.swift; sourceTree = "<group>"; };
 		77F169F52AFEE852003D9855 /* FreshDesserts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshDesserts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F169F82AFEE852003D9855 /* FreshDessertsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshDessertsApp.swift; sourceTree = "<group>"; };
 		77F169FA2AFEE852003D9855 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		7738BB6B2AFEEB540009218E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7738BB6C2AFEEB650009218E /* JsonDessertService.swift */,
+				7738BB6C2AFEEB650009218E /* JSONDessertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 				77F169FB2AFEE852003D9855 /* ContentView.swift in Sources */,
 				7738BB672AFEE8E10009218E /* Dessert.swift in Sources */,
 				7738BB692AFEEA920009218E /* DessertDetailView.swift in Sources */,
-				7738BB6D2AFEEB650009218E /* JsonDessertService.swift in Sources */,
+				7738BB6D2AFEEB650009218E /* JSONDessertService.swift in Sources */,
 				77F169F92AFEE852003D9855 /* FreshDessertsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
